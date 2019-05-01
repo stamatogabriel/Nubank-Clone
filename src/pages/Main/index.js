@@ -10,12 +10,12 @@ import Tabs from "~/components/Tabs";
 import Menu from "~/components/Menu";
 
 import { Container, Content, Card, CardContent, CardFooter, CardHeader, Annotation, Description, Title } from './styles';
-import { off } from 'rsvp';
-
 
 export default function Main() {
   let offset = 0;
-  const translateY = new Animated.Value(0); //Atualiza diversas vzs o CSS da tela, usando como state diminui a performance do app
+
+  /*Atualiza diversas vzs o CSS da tela, usando como state diminui a performance do app*/
+  const translateY = new Animated.Value(0);
 
   const animatedEvent = Animated.event(
     [
@@ -24,7 +24,7 @@ export default function Main() {
           translationY: translateY,
         },
       },
-    ], { useNativeDriver: true }
+    ], { useNativeDriver: true },
   );
 
   function onHandlerStateChanged(event) {
